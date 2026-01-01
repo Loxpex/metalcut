@@ -22,7 +22,7 @@ function addItem() {
 
 function calculate() {
     const sheetW = +document.getElementById('sheetW').value;
-    const knife = +document.getElementById('knife').value;
+    const knife = 0;
     const ws = document.querySelectorAll('.w-val');
     const qs = document.querySelectorAll('.q-val');
 
