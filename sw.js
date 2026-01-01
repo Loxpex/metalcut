@@ -1,4 +1,4 @@
-const CACHE = 'metalcut';
+const CACHE = 'metalcut-v2';
 
 self.addEventListener('install', e => {
   e.waitUntil(
