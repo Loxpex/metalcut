@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта раскроя металла 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a73e8">
+</head>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+}
+</script>
+
+<body>
+
+<div class="card">
+    <h2>⚙️ Параметры линии</h2>
+    <div class="input-group">
+        <div style="flex: 2;">
+            <label>Ширина листа (мм)</label>
+            <input type="number" id="sheetW" value="1250">
+        </div>
+        <div style="flex: 1;">
+            <label>Нож (мм)</label>
+            <input type="number" id="knife" value="0">
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>📋 Заказ (позиции)</h2>
+    <div id="items-container"></div>
+    <button class="add-btn" onclick="addItem()">+ Добавить размер</button>
+</div>
+
+<button class="main-btn" onclick="calculate()">СФОРМИРОВАТЬ КАРТУ РАСКРОЯ</button>
+
+<div id="result-area" style="display:none;">
+    <div class="card summary">
+        <div class="summary-row">
+            <div>Всего листов: <span id="total-sheets" class="total-val">0</span></div>
+            <div>Общий отход: <span id="total-waste" class="total-val waste-val">0 мм</span></div>
+        </div>
+    </div>
+    <div id="sheets-container"></div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
